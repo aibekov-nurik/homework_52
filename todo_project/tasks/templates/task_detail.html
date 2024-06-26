@@ -1,0 +1,22 @@
+<!-- tasks/templates/tasks/task_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}Детальная информация о задаче{% endblock %}
+
+{% block content %}
+    <h1>Детальная информация о задаче</h1>
+    <dl class="row">
+        <dt class="col-sm-3">Описание:</dt>
+        <dd class="col-sm-9">{{ task.description }}</dd>
+
+        <dt class="col-sm-3">Статус:</dt>
+        <dd class="col-sm-9">{{ task.get_status_display }}</dd>
+
+        <dt class="col-sm-3">Дата выполнения:</dt>
+        <dd class="col-sm-9">{{ task.due_date }}</dd>
+
+        <dt class="col-sm-3">Подробное описание:</dt>
+        <dd class="col-sm-9">{{ task.description_detail }}</dd>
+    </dl>
+    <a href="{% url 'task_list' %}" class="btn btn-primary">Назад к списку задач</a>
+{% endblock %}
