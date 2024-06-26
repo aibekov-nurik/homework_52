@@ -1,6 +1,5 @@
-from django.apps import AppConfig
+# tasks/admin.py
+from django.contrib import admin
+from .models import Task
 
-
-class TodoConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'tasks'
+admin.site.register(Task)

@@ -1,6 +1,8 @@
-from django.apps import AppConfig
+# tasks/forms.py
+from django import forms
+from .models import Task
 
-
-class TodoConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'tasks'
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ['description', 'status', 'due_date']
