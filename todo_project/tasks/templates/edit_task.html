@@ -1,0 +1,13 @@
+<!-- tasks/templates/tasks/edit_task.html -->
+{% extends 'base.html' %}
+
+{% block title %}Редактировать задачу{% endblock %}
+
+{% block content %}
+    <h1>Редактировать задачу</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% include 'tasks/task_form.html' %}
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+    </form>
+{% endblock %}
