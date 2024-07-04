@@ -23,8 +23,9 @@
                 <td>{{ task.get_status_display }}</td>
                 <td>{{ task.due_date }}</td>
                 <td>
-                    <a href="{% url 'delete_task' task.id %}" class="btn btn-sm btn-danger">Удалить</a>
+                    <a href="{% url 'confirm_delete_task' task.id %}" class="btn btn-sm btn-danger">Удалить</a>
                     <a href="{% url 'task_detail' task.id %}" class="btn btn-sm btn-info">Подробнее</a>
+                    <a href="{% url 'edit_task' task.id %}" class="btn btn-sm btn-warning">Редактировать</a>
                 </td>
             </tr>
             {% endfor %}
